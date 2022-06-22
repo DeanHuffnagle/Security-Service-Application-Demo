@@ -11,7 +11,7 @@ import java.util.Collection;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity @Data @NoArgsConstructor @AllArgsConstructor
-public class User {
+public class AppUser {
     @Id @GeneratedValue(strategy = AUTO)
  private Long id;
  private String name;

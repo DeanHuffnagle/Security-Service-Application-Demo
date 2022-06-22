@@ -1,15 +1,15 @@
 package io.getarrays.userservice.service;
 
 import io.getarrays.userservice.domain.Role;
-import io.getarrays.userservice.domain.User;
+import io.getarrays.userservice.domain.AppUser;
 
 import java.util.List;
 
 
-public interface UserService {
-    User saveUser(User user);
+public interface AppUserService {
+    AppUser saveUser(AppUser user);
     Role saveRole(Role role);
     void assignRoleToUser(String username, String roleName);
-    User getUser (String userName);
-    List<User> getUsers();
+    AppUser getUser (String userName);
+    List<AppUser> getUsers();
 }
