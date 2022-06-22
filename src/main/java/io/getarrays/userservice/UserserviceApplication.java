@@ -30,20 +30,23 @@ public class UserserviceApplication {
 	@Bean
 	CommandLineRunner run(AppUserService userService) {
 		return args -> {
-			userService.saveRole(new Role(null, "ROLE_QUARTERMASTER"));
-			userService.saveRole(new Role(null, "ROLE_HEAD_OF_MISSIONS"));
-			userService.saveRole(new Role(null, "ROLE_DOUBLE_0_AGENT"));
-			userService.saveRole(new Role(null, "ROLE_VILLAIN"));
+			userService.saveRole(new Role(null, "ROLE_USER"));
+			userService.saveRole(new Role(null, "ROLE_ADMIN"));
+			userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
+			userService.saveRole(new Role(null, "ROLE_OWNER"));
 
-			userService.saveUser(new AppUser(null, "James Bond", "007", "shaken_not_stirred", new ArrayList<>()));
-			userService.saveUser(new AppUser(null, "Olivia Mansfield", "M", "the_best_we_have", new ArrayList<>()));
-			userService.saveUser(new AppUser(null, "Ben Whishaw", "Q", "dont_touch_that", new ArrayList<>()));
-			userService.saveUser(new AppUser(null, "Auric", "Goldfinger", "J4m3sB0ndSux", new ArrayList<>()));
+			userService.saveUser(new AppUser(null, "Dean Huffnagle", "Deebo", "password", new ArrayList<>()));
+			userService.saveUser(new AppUser(null, "Regina Gavagan", "Geebo", "password", new ArrayList<>()));
+			userService.saveUser(new AppUser(null, "Alaska Huffigan", "Dapsky", "password", new ArrayList<>()));
+			userService.saveUser(new AppUser(null, "John Thomson", "Hacker_not_john", "password", new ArrayList<>()));
 
-			userService.assignRoleToUser("007", "ROLE_DOUBLE_0_AGENT");
-			userService.assignRoleToUser("M", "ROLE_HEAD_OF_MISSIONS");
-			userService.assignRoleToUser("Q", "ROLE_QUARTERMASTER");
-			userService.assignRoleToUser("Goldfinger", "ROLE_VILLAIN");
+			userService.assignRoleToUser("Deebo", "ROLE_USER");
+			userService.assignRoleToUser("Geebo", "ROLE_USER");
+			userService.assignRoleToUser("Dapsky", "ROLE_USER");
+			userService.assignRoleToUser("Hacker_not_john", "ROLE_USER");
+			userService.assignRoleToUser("Deebo", "ROLE_ADMIN");
+			userService.assignRoleToUser("Deebo", "ROLE_OWNER");
+
 
 		};
 	}
